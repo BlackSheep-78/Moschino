@@ -44,8 +44,10 @@ var slider =
 
     },
 
-    start : function()
+    start : function(event)
     {
+        console.log(event.target);
+
         this.loop = true;
 
         this.run();
@@ -79,9 +81,9 @@ $(document).ready(function()
         slider.stop();
     });
 
-    $("main section").click(function()
+    $("main section").click(function(event)
     {
-        slider.start();
+        slider.start(event);
     });
 
 });
