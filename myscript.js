@@ -11,8 +11,6 @@ var slider =
 
         if(that.loop == false) { return; };
 
-        if(that.index == null) that.index = 0;
-
         that.images = $("main section article img");
 
         var width = $("main section").width();
@@ -44,9 +42,9 @@ var slider =
 
     },
 
-    start : function(event)
+    start : function(index)
     {
-        console.log(event.target);
+        this.index = index;
 
         this.loop = true;
 
@@ -81,9 +79,12 @@ $(document).ready(function()
         slider.stop();
     });
 
-    $("main section").click(function(event)
+    $("main section article").click(function(event)
     {
-        slider.start(event);
+
+        var index = parseInt($(this).attr('data-index'));
+
+        slider.start(index);
     });
 
 });

@@ -150,6 +150,7 @@ main section article{
     box-shadow: 5px 5px 5px grey;
     margin-bottom:  10px;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 main section article img{
